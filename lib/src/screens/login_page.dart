@@ -12,7 +12,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     // bool _value = false;
-    // size.width * 1;
+    // size.width * 1;// from dev 
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
