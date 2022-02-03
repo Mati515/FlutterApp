@@ -17,17 +17,15 @@ class _SignupPage extends State<SignupPage> {
     // size.width * 1;
     return Scaffold(
       appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Container(
-            color: Colors.deepPurpleAccent,
-            padding: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height / 3,
-            ),
-            height: size.height * 1.0,
-            width: size.width * 1.0,
-
-            // height: double.infinity,
-            child: Container(
+      body: Container(
+        color: Colors.deepPurpleAccent,
+        padding: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height / 3,
+          ),
+        height: size.height * 1.0,
+        width: size.width * 1.0,
+        child: SingleChildScrollView(
+          child: Container(
               decoration: const BoxDecoration(
                   shape: BoxShape.rectangle ,
                   color: Colors.white,
@@ -187,8 +185,8 @@ class _SignupPage extends State<SignupPage> {
       
                 ),
               ),
-            )
-            ),
+        ),
+      ),
       );
 
   }
