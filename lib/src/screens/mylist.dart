@@ -2,7 +2,6 @@
 import 'package:demo_app/src/screens/login_page.dart';
 import 'package:demo_app/src/screens/signup.dart';
 import 'package:flutter/material.dart';
-
 class MyListt extends StatelessWidget {
   final String listT;
   const MyListt({Key? key, required this.listT}) : super(key: key);
@@ -14,7 +13,7 @@ class MyListt extends StatelessWidget {
         title: Text(listT),
       ),
       body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children:[
           ElevatedButton(
             child: const Text('Login Page'),
             onPressed: () {
