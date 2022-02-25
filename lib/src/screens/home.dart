@@ -120,7 +120,7 @@ class _NavhomeState extends State<Navhome> {
               ),
               Container(
                 // padding: const EdgeInsets.all(8),
-                child: const Text('Revolution, they...'),
+                child: const Text('Revolution, they...  '),
                 color: Colors.teal[600],
                 height: 15,
               ),
