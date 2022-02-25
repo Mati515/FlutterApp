@@ -36,8 +36,9 @@ class _NextState extends State<Next> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(primarySwatch: Colors.cyan),
+        theme: ThemeData(primarySwatch: Colors.amber),
         home: Scaffold(
+            backgroundColor: Colors.amber[300],
             drawer: Drawer(
               child: ListView(
                 padding: EdgeInsets.zero,
@@ -52,7 +53,7 @@ class _NextState extends State<Next> {
                     child: Text(
                       'Header',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 24,
                       ),
                     ),
@@ -73,12 +74,13 @@ class _NextState extends State<Next> {
                 ],
               ),
             ),
+
             appBar: AppBar(
               title: const Text('ListView Example'),
             ),
             body: Container(
               padding: const EdgeInsets.all(12),
-              color: Colors.white,
+              color: Colors.amber[400],
               alignment: Alignment.topCenter,
               child: ListView.builder(
                 itemBuilder: (context, index) {
