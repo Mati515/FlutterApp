@@ -31,115 +31,180 @@ class _NavhomeState extends State<Navhome> {
     var size = MediaQuery.of(context).size;
 
     final tabs = [
-      SingleChildScrollView(
-          child: Column(children: [
-        Container(
-          height: size.height * 0.25,
-          color: Colors.green,
-          child: const Material(
-            child: ListTile(
-              leading: CircleAvatar(),
-              title: Text('ListTile with red background'),
-              subtitle: Text('ListTile with red background'),
-              // tileColor: Colors.red,
+      Stack(children: [
+        SingleChildScrollView(
+            child: Column(children: [
+          SizedBox(
+            height: size.height * 0.23,
+            // color: Colors.deepPurpleAccent,
+            child: const Material(
+              child: ListTile(
+                // contentPadding: EdgeInsets.all(8.0),
+                leading: CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/gift.png'),
+                  // minRadius: 30,
+                  // Radius: 50,
+                  backgroundColor: Colors.yellow,
+                ),
+                title: Text('Muti-ur-Rahman'),
+                subtitle: Text('learning Flutter'),
+                tileColor: Colors.deepPurpleAccent,
+              ),
+            ),
+          ),
+          //Gridview
+          Container(
+            height: size.height * 0.3, //0.3
+            color: Colors.white,
+            // padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(8, 70, 8, 0),
+              child: GridView.count(
+                // physics:ScrollBehavior,
+                primary: true,
+                childAspectRatio: 4,
+                // padding: const EdgeInsets.all(0),
+                // scrollDirection:,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 1,
+                crossAxisCount: 2,
+                children: const [
+                  // 1
+                  ListTile(
+                    leading: Icon(Icons.shopping_basket),
+                    title: Text('E-Shopping'),
+                  ),
+                  //2
+                  ListTile(
+                    leading: Icon(Icons.receipt_rounded),
+                    title: Text('Bill Payement'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.receipt_long_rounded),
+                    title: Text('Charity'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.payment),
+                    title: Text('Recieved Gift'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.payment),
+                    title: Text('Bill Slip'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.payment),
+                    title: Text('Payement Back'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Carosal(imagePaths: _imagePaths), //from helper/widget
+        ])),
+        Positioned(
+          height: size.width * 0.25,
+          top: size.height * 0.15,
+          left: size.width * 0.1,
+          right: size.width * 0.1,
+          // width: size.width * 0.7,
+          child: Container(
+            // margin: const EdgeInsets.all(2),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.white,
+                border: Border.all(color: Colors.deepPurpleAccent)),
+            width: 400,
+            height: 200,
+            // child: Text(
+            //   'purpleArmy',
+            //   style:
+            //       TextStyle(color: Colors.deepPurpleAccent, fontSize: 20),
+            // ),
+            //  widget? child:Row(children: [],),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(6),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text('My Options'),
+                      // Spacer(
+                      //   flex: 1,
+                      // ),
+                      const Text('28-02-2022'),
+                    ],
+                  ),
+                ),
+                // Spacer(flex: 1,),
+                const Divider(
+                  height: 1,
+                  thickness: 1,
+                  color: Colors.grey,
+                  // indent: 20,
+                  // endIndent: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          children: const [
+                            Icon(Icons.message),
+                            Text('Message'),
+                          ],
+                        ),
+                        Column(
+                          children: const [
+                            Icon(
+                              Icons.home,
+                            ),
+                            Text('Home'),
+                          ],
+                        ),
+                        Column(
+                          children: const [
+                            Icon(Icons.category),
+                            Text('Category'),
+                          ],
+                        ),
+                        Column(
+                          children: const [
+                            Icon(Icons.money_outlined),
+                            Text('Money'),
+                          ],
+                        ),
+                        Column(
+                          children: const [
+                            Icon(Icons.call),
+                            Text('Call'),
+                          ],
+                        ), // Column(
+                        //   children: [
+                        //   Icon(Icons.ac_unit_outlined),
+                        //   Text('asad'),
+                        // ]),
+                        // Column(
+                        //   children: [
+                        //     Icon(Icons.ac_unit_outlined),
+                        //     Text('asad'),
+                        //   ],
+                        // ),
+                        // Column(
+                        //   children: [
+                        //     Icon(Icons.ac_unit_outlined),
+                        //     Text('asad'),
+                        //   ],
+                        // ),
+                      ]),
+                ),
+              ],
             ),
           ),
         ),
-
-        // Container(
-        //   height: size.height * 0.3,
-        //   child: GridView.count(
-        //     shrinkWrap:mounted,
-        //     // Create a grid with 2 columns. If you change the scrollDirection to
-        //     // horizontal, this produces 2 rows.
-        //     crossAxisCount: 3,
-        //     children: List.generate(6, (index) {
-        //       return Container(
-        //         child: Text(
-        //           'product $index',
-        //           style: Theme.of(context).textTheme.headline6,
-        //         ),
-        //       );
-        //     }),
-        //   ),
-        // )
-        Container(
-          height: size.height * 0.3,
-          color: Colors.amber,
-          child: GridView.count(
-            // physics:ScrollBehavior,
-            primary: false,
-            childAspectRatio: 4,
-            padding: const EdgeInsets.all(4),
-            // scrollDirection:,
-            // crossAxisSpacing: 10,
-            // mainAxisSpacing: 2,
-            crossAxisCount: 2,
-            children: <Widget>[
-              Container(
-                // height:10,
-                // padding: const EdgeInsets.all(8),
-                child: const Text("He'd have "),
-                color: Colors.teal[100],
-                height: 15,
-              ),
-              Container(
-                // padding: const EdgeInsets.all(8),
-                // child: const Text('Heed not the rabble'),
-                color: Colors.teal[200],
-                height: 15,
-                // child: Row(children: [
-                //   ListTile(
-                //     leading: Image.asset("gift.png"),
-                //     title: const Text('ListTile with teal background'),
-                //   ),
-                //   // Image(image: AssetImage('gift.png')),
-                //   // Icon:Icons.ac_unit,
-                // ]),
-              ),
-              Container(
-                  // padding: const EdgeInsets.all(8),
-                  // child: const Text('Heed not the rabble'),
-                  color: Colors.teal[200],
-                  height: 15,
-                  child: const ListTile(
-                    leading: CircleAvatar(),
-                    title: Text('ListTile with teal background'),
-                  )),
-              Container(
-                // padding: const EdgeInsets.all(8),
-                child: const Text('Who scream'),
-                color: Colors.teal[400],
-                height: 15,
-              ),
-              Container(
-                // padding: const EdgeInsets.all(8),
-                child: const Text('Revolution is coming...'),
-                color: Colors.teal[500],
-                height: 15,
-              ),
-              Container(
-                // padding: const EdgeInsets.all(8),
-                child: const Text('Revolution, they...  '),
-                color: Colors.teal[600],
-                height: 15,
-              ),
-            ],
-          ),
-        ),
-        Carosal(imagePaths: _imagePaths),
-        Stack(children: <Widget>[
-          Container(
-            color: Colors.red,
-            height: size.height * 0.04,
-          ),
-          Container(
-            color: Colors.red,
-            height: size.height * 0.04,
-          )
-        ]),
-      ])),
-
+      ]),
       ////Tab2
       const Center(
         child: Text('Camera'),
@@ -151,25 +216,26 @@ class _NavhomeState extends State<Navhome> {
         child: Text('Message'),
       ),
     ];
-    //*** const title = 'Grid List';//forgridview*/
     return Scaffold(
         appBar: AppBar(
-            // elevation: size.height * 0.1,
+            // elevation:size.height * 0.1,
+            // elevation:,
+            // backgroundColor:Colors.amberAccent,
             ),
         body: Builder(builder: (context) {
           return tabs[_currentIndex];
         }),
         bottomNavigationBar: BottomNavigationBar(
             // fixedColor:Colors.deepPurpleAccent[600],
-            backgroundColor: Colors.deepPurple[600],
+            backgroundColor: Colors.deepPurple[800],
             currentIndex: _currentIndex,
             type: BottomNavigationBarType.fixed,
             // elevation: size.height * 0.1,
             items: [
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                 icon: const Icon(Icons.home),
                 label: 'Home',
-                backgroundColor: Colors.cyanAccent[600],
+                backgroundColor: Colors.yellowAccent,
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.camera_alt_outlined),
